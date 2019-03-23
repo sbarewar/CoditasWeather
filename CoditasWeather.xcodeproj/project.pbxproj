@@ -8,20 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		049E043A2245FB2300F4ADCF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E04392245FB2300F4ADCF /* AppDelegate.swift */; };
-		049E043C2245FB2300F4ADCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E043B2245FB2300F4ADCF /* ViewController.swift */; };
 		049E043F2245FB2300F4ADCF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049E043D2245FB2300F4ADCF /* Main.storyboard */; };
 		049E04412245FB2500F4ADCF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 049E04402245FB2500F4ADCF /* Assets.xcassets */; };
 		049E04442245FB2500F4ADCF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 049E04422245FB2500F4ADCF /* LaunchScreen.storyboard */; };
+		049E0452224612B800F4ADCF /* CountryTempObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E044E224612B700F4ADCF /* CountryTempObject.swift */; };
+		049E0453224612B800F4ADCF /* CountryTempHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E044F224612B700F4ADCF /* CountryTempHandler.swift */; };
+		049E0454224612B800F4ADCF /* WeatherHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E0450224612B800F4ADCF /* WeatherHandler.swift */; };
+		049E0455224612B800F4ADCF /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E0451224612B800F4ADCF /* WeatherObject.swift */; };
+		049E0458224612F000F4ADCF /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E0456224612F000F4ADCF /* SelectionView.swift */; };
+		049E0459224612F000F4ADCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E0457224612F000F4ADCF /* ViewController.swift */; };
+		47BB473FD76E8470840D6105 /* Pods_CoditasWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7B4B8759E5488C0A96175E /* Pods_CoditasWeather.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		049E04362245FB2300F4ADCF /* CoditasWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoditasWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		049E04392245FB2300F4ADCF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		049E043B2245FB2300F4ADCF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		049E043E2245FB2300F4ADCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		049E04402245FB2500F4ADCF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		049E04432245FB2500F4ADCF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		049E04452245FB2500F4ADCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		049E044E224612B700F4ADCF /* CountryTempObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTempObject.swift; sourceTree = "<group>"; };
+		049E044F224612B700F4ADCF /* CountryTempHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTempHandler.swift; sourceTree = "<group>"; };
+		049E0450224612B800F4ADCF /* WeatherHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherHandler.swift; sourceTree = "<group>"; };
+		049E0451224612B800F4ADCF /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
+		049E0456224612F000F4ADCF /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
+		049E0457224612F000F4ADCF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		27127B5F5AEF9A45F1EC4D30 /* Pods-CoditasWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoditasWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoditasWeather/Pods-CoditasWeather.debug.xcconfig"; sourceTree = "<group>"; };
+		7A397F5A5357BFA4B8E97127 /* Pods-CoditasWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoditasWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoditasWeather/Pods-CoditasWeather.release.xcconfig"; sourceTree = "<group>"; };
+		DA7B4B8759E5488C0A96175E /* Pods_CoditasWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoditasWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47BB473FD76E8470840D6105 /* Pods_CoditasWeather.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		020080920DD84A16A37141DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DA7B4B8759E5488C0A96175E /* Pods_CoditasWeather.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		049E042D2245FB2200F4ADCF = {
 			isa = PBXGroup;
 			children = (
 				049E04382245FB2300F4ADCF /* CoditasWeather */,
 				049E04372245FB2300F4ADCF /* Products */,
+				F8BE1C0C55E6CF2860DBDD9C /* Pods */,
+				020080920DD84A16A37141DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +79,52 @@
 		049E04382245FB2300F4ADCF /* CoditasWeather */ = {
 			isa = PBXGroup;
 			children = (
-				049E04392245FB2300F4ADCF /* AppDelegate.swift */,
-				049E043B2245FB2300F4ADCF /* ViewController.swift */,
-				049E043D2245FB2300F4ADCF /* Main.storyboard */,
+				049E044D2245FD2C00F4ADCF /* View */,
+				049E044C2245FD2100F4ADCF /* Model */,
+				049E044B2245FD1100F4ADCF /* Controller */,
 				049E04402245FB2500F4ADCF /* Assets.xcassets */,
-				049E04422245FB2500F4ADCF /* LaunchScreen.storyboard */,
 				049E04452245FB2500F4ADCF /* Info.plist */,
 			);
 			path = CoditasWeather;
+			sourceTree = "<group>";
+		};
+		049E044B2245FD1100F4ADCF /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				049E0456224612F000F4ADCF /* SelectionView.swift */,
+				049E0457224612F000F4ADCF /* ViewController.swift */,
+				049E04392245FB2300F4ADCF /* AppDelegate.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		049E044C2245FD2100F4ADCF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				049E044F224612B700F4ADCF /* CountryTempHandler.swift */,
+				049E044E224612B700F4ADCF /* CountryTempObject.swift */,
+				049E0450224612B800F4ADCF /* WeatherHandler.swift */,
+				049E0451224612B800F4ADCF /* WeatherObject.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		049E044D2245FD2C00F4ADCF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				049E043D2245FB2300F4ADCF /* Main.storyboard */,
+				049E04422245FB2500F4ADCF /* LaunchScreen.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F8BE1C0C55E6CF2860DBDD9C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				27127B5F5AEF9A45F1EC4D30 /* Pods-CoditasWeather.debug.xcconfig */,
+				7A397F5A5357BFA4B8E97127 /* Pods-CoditasWeather.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +134,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 049E04482245FB2500F4ADCF /* Build configuration list for PBXNativeTarget "CoditasWeather" */;
 			buildPhases = (
+				09B69D2772BCB56E9B4FFEE5 /* [CP] Check Pods Manifest.lock */,
 				049E04322245FB2300F4ADCF /* Sources */,
 				049E04332245FB2300F4ADCF /* Frameworks */,
 				049E04342245FB2300F4ADCF /* Resources */,
+				6874074241AE38356718CD1A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -130,13 +195,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		09B69D2772BCB56E9B4FFEE5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CoditasWeather-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6874074241AE38356718CD1A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CoditasWeather/Pods-CoditasWeather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CoditasWeather/Pods-CoditasWeather-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		049E04322245FB2300F4ADCF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				049E043C2245FB2300F4ADCF /* ViewController.swift in Sources */,
 				049E043A2245FB2300F4ADCF /* AppDelegate.swift in Sources */,
+				049E0454224612B800F4ADCF /* WeatherHandler.swift in Sources */,
+				049E0452224612B800F4ADCF /* CountryTempObject.swift in Sources */,
+				049E0455224612B800F4ADCF /* WeatherObject.swift in Sources */,
+				049E0459224612F000F4ADCF /* ViewController.swift in Sources */,
+				049E0453224612B800F4ADCF /* CountryTempHandler.swift in Sources */,
+				049E0458224612F000F4ADCF /* SelectionView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +401,7 @@
 		};
 		049E04492245FB2500F4ADCF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 27127B5F5AEF9A45F1EC4D30 /* Pods-CoditasWeather.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -297,6 +419,7 @@
 		};
 		049E044A2245FB2500F4ADCF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7A397F5A5357BFA4B8E97127 /* Pods-CoditasWeather.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
