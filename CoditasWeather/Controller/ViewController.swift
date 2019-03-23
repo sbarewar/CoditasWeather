@@ -1,13 +1,14 @@
 //
 //  ViewController.swift
-//  NetwinWeather
+//  CoditasWeather
 //
-//  Created by kipl on 04/02/19.
+//  Created by kipl on 23/03/19.
 //  Copyright © 2019 shilendra. All rights reserved.
 //
 
 import UIKit
 import Alamofire
+import RealmSwift
 
 class ViewController: UIViewController, SelectionDelegate, UIPopoverPresentationControllerDelegate  {
    
@@ -20,12 +21,18 @@ class ViewController: UIViewController, SelectionDelegate, UIPopoverPresentation
     let country = ["UK", "England", "Scotland", "Wales"]
     let temp = ["Tmax (max temperature)","Tmin (min temperature)", "Rainfall (mm)"]
     let baseURL = "https://s3.eu-west-2.amazonaws.com/interview-question-data/metoffice/" //{metric}-{location}.json"
+    
     let countryTempHandler = CountryTempHandler()
     let weatherHandler = WeatherHandler()
     var weatherList = [WeatherObject]()
+    var support = Support()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //countryTempHandler.delete()
+        //weatherHandler.delete()
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
         self.navigationItem.title = "Weather Data"
         dimView.frame = CGRect(x:0, y:0, width: self.view.frame.width, height: self.view.frame.height)
         dimView.backgroundColor = UIColor(red: 170.0/255.0, green: 170.0/255.0, blue: 170.0/255.0, alpha: 0.5)
@@ -46,36 +53,33 @@ class ViewController: UIViewController, SelectionDelegate, UIPopoverPresentation
         countryfield.addGestureRecognizer(tap)
         tap.value = 2
         countryfield.isUserInteractionEnabled = true
-        
-//        tap = MyTapGesture(target: self, action: #selector(self.handleTap(_:)))
-//        yearField.addGestureRecognizer(tap)
-//        tap.value = 3
-//        yearField.isUserInteractionEnabled = true
+
         
     }
-    // function which is triggered when handleTap is called
+    //MARK:- function which is triggered when handleTap is called
     @objc func handleTap(_ sender: MyTapGesture) {
         view.endEditing(true)
         if sender.value ==  1 {
-            self.getSelectValue(values: temp, selectedTag: 1)
+            self.getSelectValue(values: temp, selectedTag: 1, title: "Temperature")
         }else if sender.value == 2 {
-            self.getSelectValue(values: country, selectedTag: 2)
+            self.getSelectValue(values: country, selectedTag: 2, title: "Country")
         }else if sender.value == 3 {
            // self.getSelectValue(values: country, selectedTag: 3)
         }
         
     }
-    func getSelectValue(values: [String], selectedTag: Int) {
+    func getSelectValue(values: [String], selectedTag: Int, title: String) {
         
         let popupController = self.storyboard?.instantiateViewController(withIdentifier: "selectionview") as! SelectionView
         popupController.modalPresentationStyle = .popover
         
-        //popupController.preferredContentSize = CGSize(width:300, height: 270)
+        popupController.preferredContentSize = CGSize(width:300, height: 300)
         if let popoverController = popupController.popoverPresentationController
         {
             popoverController.sourceView = self.view
             popoverController.sourceRect = CGRect(x: self.view.bounds.midX , y: self.view.bounds.midY, width:  0,height:0)
             popupController.list = values
+            popupController.titleValue = title
             popupController.selectedTag = selectedTag
             popupController.setDelegate = self
             popoverController.permittedArrowDirections = UIPopoverArrowDirection(rawValue: UInt(0))
@@ -111,16 +115,23 @@ class ViewController: UIViewController, SelectionDelegate, UIPopoverPresentation
         }
         
     }
-    
+    //MARK:- Search Action
     @IBAction func searchDataAction(_ sender: Any) {
         guard let temp = self.tempfield.text, temp != ""  else {
             self.showAlert(title: "Weather", message: "select temperature")
             return
         }
-        let paraTemp = self.findParamerterForTemp(temp: temp)
+        let paraTemp = self.support.findParamerterForTemp(temp: temp)
         guard let countryName = self.countryfield.text, countryName != "" else {
             self.showAlert(title: "Weather", message: "select country")
             return
+        }
+        if yearField.text != "" {
+            guard let year = self.yearField.text , year.count == 4,(1910 <= Int(year)!),(Int(year)! <= 2017) else {
+                self.showAlert(title: "Weather", message: "not valid year")
+                return
+            }
+            
         }
         print("\(temp) \(countryName) \(self.yearField.text!)")
         if  self.yearField.text! != "" {
@@ -135,22 +146,19 @@ class ViewController: UIViewController, SelectionDelegate, UIPopoverPresentation
     func searchDataInLocalDB(temp: String, country: String, year: Int) {
         
         let presentInDB = self.countryTempHandler.search(temp: temp, country: country)
+        print("present \(presentInDB)")
         if presentInDB {
             print("present in db")
             weatherList.removeAll()
-         weatherList = self.weatherHandler.search(temp: temp, country: country, year: year)
+            weatherList = self.weatherHandler.search(temp: temp, country: country, year: year)
             if weatherList.count > 0 {
             tableView.reloadData()
-            }else {
-                self.saveCountryAndTemp(temp: temp, country: country, year: year)
             }
+
         }else {
             print("not available")
             self.saveCountryAndTemp(temp: temp, country: country, year: year)
         }
-    
-      
-        
     }
     private func saveCountryAndTemp(temp: String, country: String,year: Int) {
         print("working inside save coutry")
@@ -196,16 +204,12 @@ class ViewController: UIViewController, SelectionDelegate, UIPopoverPresentation
                     weatherObj.tempType = temp
                     weatherObj.country = country
                     self.weatherHandler.insertAndUpdate(weatherData: weatherObj)
-                    
                 }
-                
                self.searchDataInLocalDB(temp: temp, country: country, year: year)
             
         }
         
     }
-    
-    
     
     //MARK: Alert view
     func showAlert(title: String, message: String) {
@@ -215,77 +219,22 @@ class ViewController: UIViewController, SelectionDelegate, UIPopoverPresentation
         }))
         present(alertController, animated: true, completion: nil)
     }
-    
-    func findParamerterForTemp(temp: String) -> String{
-     
-        switch temp {
-        case "Tmax (max temperature)":
-            return "Tmax"
-        case "Tmin (min temperature)":
-            return "Tmin"
-        case "Rainfall (mm)":
-            return "Rainfall"
-        default:
-            return ""
-        }
-    }
-    func findMonthName(monthNum: Int) -> String{
-        switch monthNum {
-        case 1:
-            return "Jan"
-        case 2:
-            return "Feb"
-        case 3:
-            return "Mar"
-        case 4:
-            return "Apr"
-        case 5:
-            return "May"
-        case 6:
-            return "Jun"
-        case 7:
-            return "Jul"
-        case 8:
-            return "Aug"
-        case 9:
-            return "Sep"
-        case 10:
-            return "Oct"
-        case 11:
-            return "Nov"
-        case 12:
-            return "Dec"
-            
-        default:
-            return "N/A"
-        }
-    }
-
-    
 }
+//MARK:- Table view Methods
 extension ViewController: UITableViewDelegate, UITableViewDataSource {
-    
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        <#code#>
-//    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return weatherList.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "dataCell", for: indexPath)
         let wetherData = weatherList[indexPath.row]
-        cell.textLabel?.text = "\(wetherData.value)"
-        let month = self.findMonthName(monthNum: wetherData.month)
+        cell.textLabel?.text = "Temperature \(wetherData.value)"
+        let month = self.support.findMonthName(monthNum: wetherData.month)
         cell.detailTextLabel?.text = "\(month) \(wetherData.year)"
         return cell
     }
-    
-    
-    
 }
-
+//MARK:- Tap Gesture
 class MyTapGesture: UITapGestureRecognizer {
     var value = Int()
 }

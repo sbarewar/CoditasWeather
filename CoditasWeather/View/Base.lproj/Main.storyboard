@@ -97,7 +97,9 @@
                                     <constraint firstAttribute="height" constant="30" id="n6D-v6-ha0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Search"/>
+                                <state key="normal" title="Search">
+                                    <color key="titleColor" red="0.11224120109999999" green="0.28004759550000002" blue="0.39975488190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <action selector="searchDataAction:" destination="WV1-vx-guf" eventType="touchUpInside" id="h2O-ty-HzS"/>
                                 </connections>
@@ -170,6 +172,10 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="vAk-F1-V6H"/>
                                 </constraints>
+                                <color key="barTintColor" red="0.11224120109999999" green="0.28004759550000002" blue="0.39975488190000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </textAttributes>
                                 <items>
                                     <navigationItem title="Title" id="EFw-1X-tgI"/>
                                 </items>
@@ -219,6 +225,11 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l5s-JZ-NV1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.14985179900000001" green="0.29488483069999999" blue="0.40434613819999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.14985179900000001" green="0.29488483069999999" blue="0.40434613819999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

@@ -17,6 +17,7 @@
 		049E0455224612B800F4ADCF /* WeatherObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E0451224612B800F4ADCF /* WeatherObject.swift */; };
 		049E0458224612F000F4ADCF /* SelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E0456224612F000F4ADCF /* SelectionView.swift */; };
 		049E0459224612F000F4ADCF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E0457224612F000F4ADCF /* ViewController.swift */; };
+		049E045B2246298100F4ADCF /* Support.swift in Sources */ = {isa = PBXBuildFile; fileRef = 049E045A2246298100F4ADCF /* Support.swift */; };
 		47BB473FD76E8470840D6105 /* Pods_CoditasWeather.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA7B4B8759E5488C0A96175E /* Pods_CoditasWeather.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		049E0451224612B800F4ADCF /* WeatherObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherObject.swift; sourceTree = "<group>"; };
 		049E0456224612F000F4ADCF /* SelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionView.swift; sourceTree = "<group>"; };
 		049E0457224612F000F4ADCF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		049E045A2246298100F4ADCF /* Support.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Support.swift; sourceTree = "<group>"; };
 		27127B5F5AEF9A45F1EC4D30 /* Pods-CoditasWeather.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoditasWeather.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CoditasWeather/Pods-CoditasWeather.debug.xcconfig"; sourceTree = "<group>"; };
 		7A397F5A5357BFA4B8E97127 /* Pods-CoditasWeather.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CoditasWeather.release.xcconfig"; path = "Pods/Target Support Files/Pods-CoditasWeather/Pods-CoditasWeather.release.xcconfig"; sourceTree = "<group>"; };
 		DA7B4B8759E5488C0A96175E /* Pods_CoditasWeather.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CoditasWeather.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				049E0456224612F000F4ADCF /* SelectionView.swift */,
 				049E0457224612F000F4ADCF /* ViewController.swift */,
 				049E04392245FB2300F4ADCF /* AppDelegate.swift */,
+				049E045A2246298100F4ADCF /* Support.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -101,10 +104,10 @@
 		049E044C2245FD2100F4ADCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				049E044F224612B700F4ADCF /* CountryTempHandler.swift */,
 				049E044E224612B700F4ADCF /* CountryTempObject.swift */,
-				049E0450224612B800F4ADCF /* WeatherHandler.swift */,
+				049E044F224612B700F4ADCF /* CountryTempHandler.swift */,
 				049E0451224612B800F4ADCF /* WeatherObject.swift */,
+				049E0450224612B800F4ADCF /* WeatherHandler.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				049E0452224612B800F4ADCF /* CountryTempObject.swift in Sources */,
 				049E0455224612B800F4ADCF /* WeatherObject.swift in Sources */,
 				049E0459224612F000F4ADCF /* ViewController.swift in Sources */,
+				049E045B2246298100F4ADCF /* Support.swift in Sources */,
 				049E0453224612B800F4ADCF /* CountryTempHandler.swift in Sources */,
 				049E0458224612F000F4ADCF /* SelectionView.swift in Sources */,
 			);

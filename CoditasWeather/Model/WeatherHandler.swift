@@ -1,8 +1,8 @@
 //
 //  WeatherHandler.swift
-//  NetwinWeather
+//  CoditasWeather
 //
-//  Created by kipl on 04/02/19.
+//  Created by kipl on 23/03/19.
 //  Copyright © 2019 shilendra. All rights reserved.
 //
 
@@ -27,23 +27,18 @@ class WeatherHandler {
     func search(temp: String, country: String, year: Int) -> [WeatherObject] {
         var listOfWeather = [WeatherObject]()
         var combinePredicate = NSCompoundPredicate()
-        print("year value\(year)")
         if year != 0 {
             let predicateOne = NSPredicate(format: "tempType CONTAINS[cd] %@","\(temp)")
             let predicateTwo = NSPredicate(format: "country CONTAINS[cd] %@","\(country)")
             let predicateThree = NSPredicate(format: "year == %i",year)
-            combinePredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateOne, predicateTwo, predicateThree])
+            combinePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicateOne, predicateTwo, predicateThree])
         }else {
             let predicateOne = NSPredicate(format: "tempType CONTAINS[cd] %@","\(temp)")
             let predicateTwo = NSPredicate(format: "country CONTAINS[cd] %@","\(country)")
-            combinePredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateOne, predicateTwo])
+            combinePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicateOne, predicateTwo])
         }
         print(combinePredicate)
         let weatherList = realm.objects(WeatherObject.self).filter(combinePredicate)
-        if year != 0 {
-            
-        }
-        print("count \(weatherList.count)")
         if weatherList.count > 0
         {
             listOfWeather.removeAll()
@@ -56,8 +51,6 @@ class WeatherHandler {
                 weatherObj.year = data.year
                 listOfWeather.append(weatherObj)
             }
-           
-            
         }
         return listOfWeather
     }

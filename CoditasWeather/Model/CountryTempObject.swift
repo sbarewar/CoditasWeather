@@ -1,8 +1,8 @@
 //
 //  CountryTempObject.swift
-//  NetwinWeather
+//  CoditasWeather
 //
-//  Created by kipl on 04/02/19.
+//  Created by kipl on 23/03/19.
 //  Copyright © 2019 shilendra. All rights reserved.
 //
 

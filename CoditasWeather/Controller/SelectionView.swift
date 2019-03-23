@@ -1,8 +1,8 @@
 //
 //  SelectionView.swift
-//  NetwinWeather
+//  CoditasWeather
 //
-//  Created by kipl on 04/02/19.
+//  Created by kipl on 23/03/19.
 //  Copyright © 2019 shilendra. All rights reserved.
 //
 
@@ -19,14 +19,18 @@ class SelectionView: UIViewController {
     var setDelegate : SelectionDelegate?
     var list : [String] = []
     var selectedTag : Int = 0
+    var titleValue : String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationBar.topItem?.title = titleValue
         selectionTable.delegate = self
         selectionTable.dataSource = self
         selectionTable.reloadData()
     }
     
 }
+//MARK:- Table view Methods
 extension SelectionView: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count

@@ -1,8 +1,8 @@
 //
 //  CountryTempHandler.swift
-//  NetwinWeather
+//  CoditasWeather
 //
-//  Created by kipl on 04/02/19.
+//  Created by kipl on 23/03/19.
 //  Copyright © 2019 shilendra. All rights reserved.
 //
 
@@ -28,8 +28,7 @@ class CountryTempHandler {
         
         let predicateOne = NSPredicate(format: "tempType CONTAINS[cd] %@","\(temp)")
         let predicateTwo = NSPredicate(format: "country CONTAINS[cd] %@","\(country)")
-        let combinePredicate = NSCompoundPredicate(orPredicateWithSubpredicates: [predicateOne, predicateTwo])
-        
+         let combinePredicate = NSCompoundPredicate(andPredicateWithSubpredicates: [predicateOne, predicateTwo])
         let details = realm.objects(CountryTempObject.self).filter(combinePredicate)
         if details.count > 0
         {
